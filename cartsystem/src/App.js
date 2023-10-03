@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react'
+import ColorChange from './ColorCange';
+import { useState } from 'react';
+
 
 function App() {
+  const [bgColor, setBgColor] = useState({
+    colors1:'red'
+  });
+
+
+
+
+  const changeBgColor=()=>{
+    return(
+    
+        setBgColor({
+          colors1: 'blue',
+          
+          
+        })
+      
+    )
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='main-body' style={{display:"flex",alignItems:"center",flexDirection:"column"}}>
+      <h1>APP COMPONENT</h1>
+     <ColorChange bgcolor={bgColor} />
+     <button onClick={changeBgColor}>CHANGE THE COLOR</button>
+     
+
+
     </div>
   );
 }
 
-export default App;
+export default App
